@@ -1,0 +1,87 @@
+//Breakpoints for Media Queries
+@mixin bp($point) {
+
+  @if $point==xs {
+    @media only screen and (max-width: 350px) {
+      @content;
+    }
+  }
+
+  @else if $point==sm {
+    @media only screen and (max-width: 800px) {
+      @content;
+    }
+  }
+
+  @else if $point==md {
+    @media only screen and (min-width: 800px) {
+      @content;
+    }
+  }
+
+  @else if $point==lg {
+    @media only screen and (min-width: 1000px) {
+      @content;
+    }
+  }
+
+  @else if $point==xl {
+    @media only screen and (min-width: 1300px) {
+      @content;
+    }
+  }
+}
+
+//mixins for page elements
+@mixin large-header-font($color) {
+  @include bp(lg) {
+    font-size: $md-size;
+  }
+
+  @include bp(md) {
+    font-size: $lg-size;
+  }
+
+  font-size: $lg-size;
+  font-family: $Poppins;
+  letter-spacing: $md-lg-spacing;
+  padding: $font-padding-vh;
+  color: $color;
+
+}
+
+@mixin secondary-header-font($color) {
+  @include bp(xl) {
+    font-size: $xs-size;
+  }
+
+  @include bp(lg) {
+    font-size: $sm-size;
+  }
+
+  @include bp(md) {
+    font-size: $md-size;
+  }
+
+  font-size: $md-size;
+  font-family: $PT-Sans;
+  letter-spacing: $md-lg-spacing;
+  color: $color;
+}
+
+@mixin paragraph-font {
+  font-family: $PT-Serif;
+  font-size: $sm-size;
+  color: $paragraph-color;
+}
+
+
+//mixins for vendor prefixes
+
+@mixin transition($args...) {
+  transition: $args;
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+}

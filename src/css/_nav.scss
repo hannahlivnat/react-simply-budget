@@ -1,0 +1,34 @@
+nav {
+  background-color: $bright-dark-blue;
+  width: 100%;
+  height: 5vh;
+
+  .nav-wrapper {
+    background-color: $bright-dark-blue;
+    width: 98%;
+    margin: auto;
+  }
+
+  .brand-logo {
+    @include secondary-header-font($white);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.not-logged-in-nav {
+  margin-bottom: 0;
+}
+
+.logged-in-nav {
+  li {
+    font-family: $PT-Sans;
+  }
+
+  //logout button 
+  .logout-button {
+    background-color: $peru-orange;
+  }
+}

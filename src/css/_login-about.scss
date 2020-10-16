@@ -1,0 +1,61 @@
+.about-simply-budget {
+  width: 90%;
+  margin: 10vh auto;
+
+  h2 {
+    @include large-header-font($bright-dark-blue);
+    font-weight: $heavy-weight;
+    text-align: center;
+  }
+
+  h4 {
+    @include secondary-header-font($peru-orange);
+    font-weight: $normal-weight;
+  }
+
+  p {
+    @include paragraph-font;
+  }
+
+  .login-about-row {
+    @include bp(xl) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    width: 100%;
+
+    .column-group {
+      @include bp(xl) {
+        width: 30%;
+      }
+
+      width: 100%;
+      padding-bottom: 3rem;
+      margin: 3vh 0;
+      border-radius: $form-border-radius;
+      border-top: 4px solid $peru-orange;
+      box-shadow: $box-shadow;
+      color: $chalkboard-black;
+
+      h5 {
+        @include secondary-header-font($chalkboard-black);
+        font-weight: $thin-weight;
+        width: 96%;
+        margin: 10px auto;
+      }
+
+      p {
+        padding: .3rem .1rem;
+        width: 96%;
+        margin: auto;
+
+      }
+
+      &:hover {
+        box-shadow: $focus-box-shadow;
+      }
+    }
+  }
+}

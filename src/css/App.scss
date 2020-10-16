@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=PT+Serif&family=Poppins:wght@700');
+
+// Import Variables and Mixins 
+@import 'color';
+@import 'layout';
+@import 'mixin';
+@import 'font';
+
+// Import Common Component Styles
+@import 'button';
+
+// Import Partial Files
+@import 'header';
+@import 'nav';
+@import 'form';
+@import 'login-about';
+
+// Applies Across All Pages
+html, .root, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  @include transition(all .2s linear);
+  min-height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background-color: $whitesmoke;
+  box-sizing: border-box;
+}
+
+table {
+  th {
+    text-align: center;
+  }
+}
+
+.no-padding-or-margin {
+  margin: 0;
+  padding: 0;
+}
+
+.half-width {
+  width: 48%;
+}
+
+.MuiFormControl-marginNormal {
+  margin-left: 5px;
+  margin-right: 5px;
+}
