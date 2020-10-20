@@ -21,7 +21,7 @@ function App() {
     //set up input for signup or login
     (newOrExisting === "New User") 
       ? (
-        headerObject = {userType: "NewUser", username: `${formData.username}`, password: `${formData.password}`, firstname: `${formData.firstname}`, lastname: `${formData.lastname}`, budgetdetails: [], budgetdetails: []}
+        headerObject = {userType: "NewUser", username: `${formData.username}`, password: `${formData.password}`, firstname: `${formData.firstname}`, lastname: `${formData.lastname}`, budgetdetails: [], budgetplan: []}
       ):(
         headerObject = {userType: "ExistingUser", username: `${formData.username}`, password: `${formData.password}`}
       );
