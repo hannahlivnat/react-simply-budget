@@ -24,7 +24,7 @@ function SignUpForm(props) {
         <InputLabel htmlFor="password">Password</InputLabel>
         <Input id="password" aria-describedby="Password"></Input>
       </FormControl>
-      <Button className="button">Create Your Account</Button>
+      <Button className="button" onClick={props.submitTriggered}>Create Your Account</Button>
       <p>Already Have an Account? <a onClick={props.toggle}>Sign In.</a></p>
     </form>
   )

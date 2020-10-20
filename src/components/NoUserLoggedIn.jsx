@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types' 
 import LogInForm from './LogInForm';
 import SignUpForm from './SignUpForm';
 import AboutSimplyBudget from './AboutSimplyBudget';
 
-function NoUserLoggedIn() {
+function NoUserLoggedIn(props) {
   const [formToShow, switchFormToShow] = useState("login");    
-
+  const { submitTriggered } = props;
   const switchToLogin = () => {
     switchFormToShow("login");
   }
@@ -27,8 +28,8 @@ function NoUserLoggedIn() {
       <div className="form-container">
         {
           (formToShow === "login")
-            ? <LogInForm toggle={switchToSignUp}/>
-            : <SignUpForm toggle={switchToLogin}/>
+            ? <LogInForm toggle={switchToSignUp} submitTriggered={submitTriggered} />
+            : <SignUpForm toggle={switchToLogin} submitTriggered={submitTriggered} />
         }
       </div>
       <AboutSimplyBudget />
@@ -37,3 +38,7 @@ function NoUserLoggedIn() {
 };
 
 export default NoUserLoggedIn;
+
+NoUserLoggedIn.propTypes = {
+  submitTriggered: PropTypes.func
+}
