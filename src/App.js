@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import dotenv from 'dotenv'
 import UserLoggedIn from './components/UserLoggedIn';
 import NoUserLoggedIn from './components/NoUserLoggedIn';
 import './css/App.css';
@@ -14,8 +13,9 @@ function App() {
   const userAccessRequestTriggered = (newOrExisting, formData) => {
     console.log(newOrExisting, formData);
     //endpoint url
-    const APIEndpoint = `https://${process.env.API_ID}.execute-api.${process.env.API_REGION}.amazonaws.com/${process.env.PATH_VERSION}`;
-    const stateMachine = `${process.env.USER_ACCESS_ARN}`
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const APIEndpoint = `https://${process.env.REACT_APP_API_ID}.execute-api.${process.env.REACT_APP_API_REGION}.amazonaws.com/${process.env.REACT_APP_PATH_VERSION}`;
+    const stateMachine = `${process.env.REACT_APP_USER_ACCESS_ARN}`
     let headerObject = {};
 
     //set up input for signup or login
@@ -35,7 +35,7 @@ function App() {
     //Make call to API gateway
     axios({
       method: 'post',
-      url: APIEndpoint,
+      url: proxyurl + APIEndpoint,
       data: header
     }).then(response => {
       console.log(response)
