@@ -82,18 +82,6 @@ function App() {
         console.log(err)
       })
 
-      //(response.status === 200) 
-      //  ? (
-      //    isUserLoggedIn(true)
-      //    (newOrExisting === "New User") 
-      //      ? (
-      //        setUser({username: `${formData.username}`, password: `${formData.password}`, firstname: `${formData.firstname}`, lastname: `${formData.lastname}`, budgetdetails: [], budgetplan: [] })
-      //      ):(
-      //        setUser({})
-      //      )
-      //  ):(
-      //    console.log(response)
-      //  );
     }, err => {
       console.log(err)
     })
