@@ -10,7 +10,8 @@ function LoginForm(props) {
   const [password, changePassword] = useState('');
   const { toggle, submitTriggered } = props;
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const formData = {username: `${username}`, password: `${password}`};
     submitTriggered("Existing User", formData);
   }
@@ -19,11 +20,10 @@ function LoginForm(props) {
     (event.target.id == "username")
       ? changeUsername(event.target.value)
       : changePassword(event.target.value)
-    console.log(username, password)
   }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h4>Login:</h4>
       <FormControl fullWidth={true} margin="normal">
         <InputLabel htmlFor="username">Username</InputLabel>
@@ -31,9 +31,9 @@ function LoginForm(props) {
       </FormControl>
       <FormControl fullWidth={true} margin="normal">
         <InputLabel htmlFor="password">Password</InputLabel>
-        <Input id="password" aria-describedby="Password" onChange={handleChange}></Input>
+        <Input id="password" aria-describedby="Password" type="password" onChange={handleChange}></Input>
       </FormControl>
-      <Button className="button" onClick={handleSubmit}>Login</Button>
+      <Button className="button" type="submit">Login</Button>
       <p>Don't Have an Account? <a onClick={toggle}>Register.</a></p>
     </form>
   )

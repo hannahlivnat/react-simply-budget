@@ -38,7 +38,6 @@ function UserLoggedIn() {
             </ul>
           </div>
         </nav>
-      </Router>   
       <header>   
 
       </header> 
@@ -56,6 +55,7 @@ function UserLoggedIn() {
             <EditBudgetPlan />
           </Route>
         </Switch>
+      </Router>   
     </div>
   )
 };

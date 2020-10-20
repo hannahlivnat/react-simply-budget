@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function MainBudgetPage() {
   return (
-    <div classname="main-budget-page-container"></div>
+    <div className="main-budget-page-container"></div>
   )
 }
 
