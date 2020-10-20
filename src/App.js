@@ -54,9 +54,8 @@ function App() {
       }).then(response => {
         describedResponse = JSON.parse(response.data.output);
         console.log(describedResponse);
-        if (describedResponse.statusCode === 200) {
+        if (describedResponse.statusCode === 200 || describedResponse.status === 200) {
             logInSuccess();
-
             if (newOrExisting === 'New User') {
                 setUser({
                   username: `${formData.username}`, 
@@ -66,12 +65,13 @@ function App() {
                   budgetplan: [] 
                 })
             } else {
+                describedResponse = describedResponse.body.Item;
                 setUser({
-                  username: describedResponse.body.Item.username, 
-                  firstname: describedResponse.body.Item.firstname, 
-                  lastname: describedResponse.body.Item.lastname, 
-                  budgetdetails: describedResponse.body.Item.budgetdetails, 
-                  budgetplan: describedResponse.body.Item.budgetplan
+                  username: describedResponse.username, 
+                  firstname: describedResponse.firstname, 
+                  lastname: describedResponse.lastname, 
+                  budgetdetails: describedResponse.budgetdetails, 
+                  budgetplan: describedResponse.budgetplan
                 })
             }
 
