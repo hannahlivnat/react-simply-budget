@@ -1,4 +1,4 @@
-This Create React App is deployed using AWS Amplify and additionally uses API Gateway, AWS Step Functions, Lambda functions, and DynamoDB.
+This Create React Login Page was deployed using AWS Amplify and additionally uses API Gateway, AWS Step Functions, Lambda functions, and DynamoDB.
 
 ## Available Scripts
 
